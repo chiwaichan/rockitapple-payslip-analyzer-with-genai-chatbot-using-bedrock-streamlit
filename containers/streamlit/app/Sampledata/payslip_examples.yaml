@@ -1,0 +1,587 @@
+- answer: There are 15086 rows in the payslips table. 工資單表中有15086行。
+  input: How many rows are there in the payslips table? OR 有多少行在工資單表中？
+  sql_cmd: SELECT count(*) FROM payslips;
+  sql_result: '[(15086,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave_days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The pay for payslip on pay date 2024-06-05 is $230.03 工資單上2024年6月5日的薪資是$230.03。
+  input: How much was the pay for payslip on pay date 2024-06-05? OR 在2024年6月5日的發薪日，工資單上的工資是多少？
+  sql_cmd: SELECT take_home_pay_amount FROM payslips where pay_date = '2024-06-05';
+  sql_result: '[(230.03,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave_days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+
+- answer: The total pay for all payslips is $11230.03 所有工資單的總工資是$11230.03。
+  input: How much was the total pay for all payslips? OR 所有工資單的總工資是多少？
+  sql_cmd: SELECT sum(take_home_pay_amount) FROM payslips;
+  sql_result: '[(11230.03,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave_days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+
+
+- answer: The employer contribution for KiwiSaver is $11230.03. 雇主對KiwiSaver的貢獻是$11230.03。
+  input: What is the employer contribution for KiwiSaver? OR 雇主對KiwiSaver的貢獻是多少？
+  sql_cmd: SELECT sum(kiwisaver_employer_contribution_amount) FROM payslips;
+  sql_result: '[(11230.03,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave_days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+
+
+- answer: The total holiday pay amount is $5020.50. 總的假期工資是$5020.50。
+  input: What is the total holiday pay amount? OR 總的假期工資是多少？
+  sql_cmd: SELECT sum(holiday_pay_amount) FROM payslips;
+  sql_result: '[(5020.50,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave_days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+
+- answer: The total tax deductions amount is $3000.00. 總的稅收扣除額是$3000.00。
+  input: What is the total tax deductions amount? OR 總的稅收扣除額是多少？
+  sql_cmd: SELECT sum(tax_deductions_amount) FROM payslips;
+  sql_result: '[(3000.00,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave_days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total direct credit amount is $15000.75. 總的直接信用額是$15000.75。
+  input: What is the total direct credit amount? OR 總的直接信用額是多少？
+  sql_cmd: SELECT sum(direct_credit_total_amount) FROM payslips;
+  sql_result: '[(15000.75,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total earnings for ordinary time work hours is $20000.00. 總的正常工作時間收入是$20000.00。
+  input: What is the total earnings for ordinary time work hours? OR 總的正常工作時間收入是多少？
+  sql_cmd: SELECT sum(earnings_ordinary_time_standard_work_total_amount) FROM payslips;
+  sql_result: '[(20000.00,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay_amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total deductions amount is $4500.25. 總的扣除額是$4500.25。
+  input: What is the total deductions amount? OR 總的扣除額是多少？
+  sql_cmd: SELECT sum(total_deductions_amount) FROM payslips;
+  sql_result: '[(4500.25,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total KiwiSaver employee deduction amount is $1300.40. 總的KiwiSaver員工扣除額是$1300.40。
+  input: What is the total KiwiSaver employee deduction amount? OR 總的KiwiSaver員工扣除額是多少？
+  sql_cmd: SELECT sum(kiwisaver_employee_deduction_total_amount) FROM payslips;
+  sql_result: '[(1300.40,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take-home pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total earnings amount is $25000.00. 總的收入是$25000.00。
+  input: What is the total earnings amount? OR 總的收入是多少？
+  sql_cmd: SELECT sum(total_earnings_amount) FROM payslips;
+  sql_result: '[(25000.00,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total_amount double precision,
+        bank_account character varying,
+        kiwisaver_employer_contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take-home pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total pay for alternative leave days is $800.75. 替代休假日的總工資是$800.75。
+  input: What is the total pay for alternative leave days? OR 替代休假日的總工資是多少？
+  sql_cmd: SELECT sum(alternative_leave_days) FROM payslips;
+  sql_result: '[(800.75,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave_days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total earnings for standard work hours is $18000.00. 標準工作時間的總收入是$18000.00。
+  input: What is the total earnings for standard work hours? OR 標準工作時間的總收入是多少？
+  sql_cmd: SELECT sum(earnings_ordinary_time_standard_work_total_amount) FROM payslips;
+  sql_result: '[(18000.00,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total earnings rate amount is $50.00 per hour. 總的收入率是每小時$50.00。
+  input: What is the total earnings rate amount? OR 總的收入率是多少？
+  sql_cmd: SELECT avg(earnings_ordinary_time_standard_work_rate_amount) FROM payslips;
+  sql_result: '[(50.00,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total amount of all take-home pays is $50000.00. 總的到手工資是$50000.00。
+  input: What is the total amount of all take-home pays? OR 總的到手工資是多少？
+  sql_cmd: SELECT sum(take_home_pay_amount) FROM payslips;
+  sql_result: '[(50000.00,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,      
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total amount of direct credits is $32000.75. 直接信用總額是$32000.75。
+  input: What is the total amount of direct credits? OR 直接信用總額是多少？
+  sql_cmd: SELECT sum(direct_credit_total_amount) FROM payslips;
+  sql_result: '[(32000.75,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The total tax deduction percentage for KiwiSaver is 3%. KiwiSaver的總稅收扣除百分比是3%。
+  input: What is the total tax deduction percentage for KiwiSaver? OR KiwiSaver的總稅收扣除百分比是多少？
+  sql_cmd: SELECT avg(kiwisaver_employee_deduction_percentage) FROM payslips;
+  sql_result: '[(3,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay_period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+- answer: The lowest tax deduction percentage for KiwiSaver is 3%. 在所有已知的工資單中，最低的稅款扣除額是3%。
+  input: What is the lowest tax deductions amount out of all the known payslips? OR 在所有已知的工資單中，最低的稅款扣除額是多少？
+  sql_cmd: SELECT min(tax_deductions_amount) FROM payslips;
+  sql_result: '[(3,)]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay-period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision
+    );
+
+
+
+
+
+
+
+
+- answer: $1,204.11 was paid into your bank account 01-2345-6789123-00 on the 2024-05-29. you worked 57 Hours at an Hourly Rate of $26.8 and the Tax Deduction amount is $396.21. Your Kiwsaver Employee Deduction paid to IRD is $49.49. $1,204.11 已於2024年5月29日存入您的銀行賬戶 01-2345-6789123-00。您在時薪 $26.8 的情況下工作了 57 小時，稅款扣減金額為 $396.21。
+  input: Tell me about the Payslip with the Pay Date on '2024-05-29'? 請告訴我關於 2024 年 5 月 29 日工資發放日期的工資單？
+  sql_cmd: SELECT * FROM payslips where pay_date = '2024-05-29';
+  sql_result: '[
+                  (
+                      122.21,  
+                      49.49,     
+                      "123 Main St",
+                      1204.11,  
+                      "01-2345-6789123-00",
+                      49.49,      
+                      "57 Hours",      
+                      "John Doe", 
+                      "2024-05-29", 
+                      26.8,  
+                      "2",      
+                      445.7,   
+                      "2024-05-20",
+                      "2024-05-26", 
+                      1649.81,   
+                      1204.11,   
+                      "123-456-789",
+                      1527.6,   
+                      "3",      
+                      396.21,      
+                      123,      
+                  )]'
+  table_info: |
+    CREATE TABLE payslips
+    (
+        holiday_pay_amount double precision,
+        kiwisaver_employee_deduction_total_amount double precision,
+        address character varying,
+        direct_credit_total amount double precision,
+        bank_account character varying,
+        kiwisaver_employer contribution_amount double precision,
+        earnings_ordinary_time_standard_work_hours character varying,
+        name character varying,
+        pay_date character varying,
+        earnings_ordinary_time_standard_work_rate_amount double precision,
+        alternative_leave days character varying,
+        total_deductions_amount double precision,
+        pay-period_start character varying,
+        pay_period_end character varying,
+        total_earnings_amount double precision,
+        take_home_pay amount double precision,
+        ird_number character varying,
+        earnings_ordinary_time_standard_work_total_amount double precision,
+        kiwisaver_employee_deduction_percentage character varying,
+        tax_deductions_amount double precision,
+        employee_id character varying
+    );

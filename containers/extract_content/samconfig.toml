@@ -1,0 +1,9 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "upload-content-lambda"
+resolve_s3 = true
+s3_prefix = "upload-content-lambda"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = ["UploadContentFunction=506962462695.dkr.ecr.us-east-1.amazonaws.com/uploadcontentlambda929f8089/uploadcontentfunctiona3c83ba1repo"]

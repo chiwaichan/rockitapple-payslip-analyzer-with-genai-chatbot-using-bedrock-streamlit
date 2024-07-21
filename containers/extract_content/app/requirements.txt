@@ -1,0 +1,6 @@
+requests
+amazon-textract-response-parser
+amazon-textract-prettyprinter
+amazon-textract-helper
+# sagemaker
+# ipywidgets==7.0.0

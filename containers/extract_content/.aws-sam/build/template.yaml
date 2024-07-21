@@ -1,0 +1,63 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'python3.9
+
+  Sample SAM Template for sam-app
+
+  '
+Globals:
+  Function:
+    Timeout: 900
+Resources:
+  DeciderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Architectures:
+      - x86_64
+      Environment:
+        Variables:
+          S3_OUTPUT_PREFIX: textract-output
+          S3_OUTPUT_BUCKET: my-stack-dev-documentbucket04c71448-7en8gx904sk5
+          S3_BUCKET_NAME_ATHENA: genairockitpackingpayslip-rockitpayslipathenadatab-qbbbhh4vofvz
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
+      ImageUri: deciderfunction:python3.9-v1
+    Metadata:
+      DockerContext: /Users/chiwaichan/takme/repos/GenAIRockitPackingPayslipRAG/containers/extract_content
+      DockerTag: python3.9-v1
+      Dockerfile: Dockerfile
+      SamResourceId: DeciderFunction
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      Policies:
+      - PolicyName: LambdaExecutionPolicy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:GetObject
+            - s3:GetBucketLocation
+            Resource:
+            - arn:aws:s3:::mums-docuements
+            - arn:aws:s3:::mums-docuements/*
+          - Effect: Allow
+            Action:
+            - textract:StartDocumentAnalysis
+            - textract:GetDocumentAnalysis
+            Resource: '*'
+          - Effect: Allow
+            Action:
+            - bedrock:InvokeModel
+            Resource: '*'
