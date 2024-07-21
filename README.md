@@ -84,7 +84,7 @@ Click the value for the Key "StreamlitFargateServiceServiceURL"
 ![Streamlit URL](https://raw.githubusercontent.com/chiwaichan/blog-assets/main/images/rockit-payslip-bedrock-streamlit/streamliturl.png)
 
 
-That will take you to a Streamlit App hosted in the Fargate Container shown in the architecture diagram
+That will take you to a Streamlit App hosted in the Fargate Container shown in the architecture diagram, use "cats" as the username and password - make sure you modify the code with your own authentication/authorisation if you are building on top of this.
 
 ![Streamlit App](https://raw.githubusercontent.com/chiwaichan/blog-assets/main/images/rockit-payslip-bedrock-streamlit/streamlit.png)
  
