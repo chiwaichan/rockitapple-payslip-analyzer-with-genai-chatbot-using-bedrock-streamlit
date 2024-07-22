@@ -108,12 +108,16 @@ credentials_path = os.path.expanduser('~')
 if not os.path.exists(credentials_path):
     raise ValueError("AWS credentials file not found." + credentials_path)
 
+session = boto3.session.Session()
+current_region = session.region_name
+
+
 # configuring your instance of Amazon bedrock, selecting the CLI profile, modelID, endpoint url and region.
 llm = Bedrock(
     credentials_profile_name=os.getenv("default"),
     model_id="amazon.titan-text-express-v1",
-    endpoint_url="https://bedrock-runtime.us-east-1.amazonaws.com",
-    region_name="us-east-1",
+    endpoint_url=f"https://bedrock-runtime.{current_region}.amazonaws.com",
+    region_name=current_region,
     verbose=True
 )
 

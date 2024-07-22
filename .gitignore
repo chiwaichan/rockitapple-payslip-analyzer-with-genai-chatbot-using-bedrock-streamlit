@@ -1,0 +1,5 @@
+.DS_Store
+venv/
+cdk.out/
+streamlit/.env
+__pycache__/
